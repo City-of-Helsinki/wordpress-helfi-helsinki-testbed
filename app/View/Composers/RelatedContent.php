@@ -11,6 +11,8 @@ class RelatedContent extends Component
     public $label;
     public $query;
     public $category;
+    public $block;
+    public $use_pagination = false;
 
     /**
      * Create the component instance.
@@ -23,6 +25,11 @@ class RelatedContent extends Component
         $this->label = $label;
         $this->query = $query;
         $this->category = $category;
+
+        $this->block = (object) [
+            'id' => '',
+            'classes' => '',
+        ];
     }
 
     /**

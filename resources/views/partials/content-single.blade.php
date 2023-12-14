@@ -74,6 +74,12 @@
 
   </div>
 
+  <?php
+    if ( empty( $related ) ) {
+      $related = \App\related_content();
+    }
+  ?>
+
   <x-related-content
     :type="$related->type"
     :label="$related->label"

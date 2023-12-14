@@ -34,12 +34,12 @@ class PersonList extends Block
                 return get_post($postId);
             })
             ->filter(function ($post) {
-                return $post->post_status == 'publish';
+                return $post ? $post->post_status == 'publish' : false;
             })
             ->all();
     }
 
-    public function render($block, $content = '', $preview = false, $post = 0)
+    public function render($block, $content = '', $preview = false, $post_id = 0, $wp_block = false, $context = false)
     {
         if (!$this->persons()) {
             if (is_bool($preview) && $preview) {

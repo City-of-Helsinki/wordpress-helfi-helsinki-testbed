@@ -52,3 +52,20 @@ function languages_list(): array
         })
         ->toArray();
 }
+
+function related_content(): \stdClass
+{
+    return (object) [
+        'type' => '',
+        'label' => __('Related content', 'sage'),
+        'category' => get_the_category(),
+        'query' => new \WP_Query([
+            'category__in' => wp_list_pluck(get_the_category(), 'term_id'),
+            'post__not_in' => [get_the_ID()],
+            'post_type' => 'post',
+            'posts_per_page' => 4,
+            'post_status' => 'publish',
+            'ignore_sticky_posts' => true,
+        ]),
+    ];
+}
