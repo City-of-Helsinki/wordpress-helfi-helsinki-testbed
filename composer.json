@@ -42,7 +42,7 @@
     }
   ],
   "require": {
-    "generoi/sage-nativeblock": "*"
+    "generoi/sage-nativeblock": "dev-master"
   },
   "minimum-stability": "dev",
   "prefer-stable": true
