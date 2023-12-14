@@ -1,0 +1,98 @@
+.site-header {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px $spacing-s;
+
+  @include mq($from: large) {
+    padding-left: 0;
+    padding-right: 0;
+    max-width: calc(var(--container-width) * 1px);
+  }
+
+  @include ie11 {
+    max-width: $global-width;
+  }
+
+  &__logo {
+    margin-right: $spacing-m;
+    // Offset so the text within the logo is vertically centered
+    margin-bottom: -5px;
+
+    &:hover {
+      background-color: transparent;
+    }
+
+    @include mq($from: large) {
+      svg {
+        width: 102px;
+        height: 47px;
+      }
+    }
+  }
+
+  &__name {
+    // push remaining columns to the right
+    flex: 1 0 auto;
+
+    > h5 {
+      margin-bottom: 0;
+    }
+  }
+
+  &__search {
+    display: none;
+
+    @include mq($from: large) {
+      display: block;
+    }
+  }
+
+  &__hamburger-button {
+    display: block;
+    margin-left: $spacing-m;
+
+    @include mq($from: large) {
+      display: none;
+    }
+  }
+
+  &__languages {
+    display: none;
+
+    @include mq($from: large) {
+      display: block;
+    }
+  }
+
+  // When navigation is activated on mobile
+  .is-active & {
+    .site-header__search {
+      display: block;
+      padding-top: $spacing-m;
+      padding-left: ($spacing-m - $spacing-s);
+      padding-right: ($spacing-m - $spacing-s);
+      padding-bottom: calc(#{$spacing-m} - 10px); // custom padding on .site-header
+      margin-top: 10px; // site-header custom padding
+      position: relative;
+
+      &::before {
+        content: '';
+        position: absolute;
+        display: block;
+        width: 100vw;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 0;
+        border-top: solid 1px $color-black-10;
+      }
+
+      // Move last and take up whole row
+      order: 5;
+      flex-basis: 100%;
+    }
+  }
+}

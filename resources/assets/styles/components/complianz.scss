@@ -1,0 +1,45 @@
+.cc-window {
+  padding: $spacing-m !important;
+  max-width: 600px !important;
+  z-index: 7426172 !important; // z-index of footer plus one
+  font-family: inherit !important;
+
+  .cc-message {
+    margin-bottom: $spacing-l !important;
+
+    .cc-link {
+      display: block !important;
+      padding: 0 !important;
+      margin-top: $spacing-m;
+
+      &:hover {
+        opacity: 1;
+        background-color: transparent;
+      }
+    }
+  }
+
+  .cc-compliance {
+    flex-direction: row-reverse;
+    margin-left: -1 * $spacing-3-xs;
+    margin-right: -1 * $spacing-3-xs;
+
+    @include mq($until: medium) {
+      flex-direction: column-reverse;
+      align-items: stretch;
+    }
+
+    .cc-btn {
+      margin-left: $spacing-3-xs;
+      margin-right: $spacing-3-xs;
+      padding: $spacing-2-xs $spacing-s;
+      margin-bottom: $spacing-2-xs;
+
+      @include mq($from: medium) {
+        flex-grow: 0 !important;
+        white-space: nowrap !important;
+        margin-bottom: 0;
+      }
+    }
+  }
+}

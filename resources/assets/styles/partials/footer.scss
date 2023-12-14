@@ -1,0 +1,183 @@
+.content-info {
+  position: relative;
+  padding: $spacing-3-xl $spacing-m;
+  background-color: $color-black;
+
+  &::before {
+    content: ' ';
+    position: absolute;
+    top: -23px;
+    left: 0;
+    width: 100%;
+    height: $footer-koro-height;
+    background-repeat: repeat-x;
+    background-image: svg-load('./images/koro-basic.svg', fill='#000000');
+  }
+
+  .widget {
+    &__title {
+      margin-bottom: 0;
+    }
+  }
+
+  .footer {
+    max-width: $global-width;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  hr {
+    margin-top: $spacing-2-xl;
+    margin-bottom: $spacing-m;
+  }
+
+  a {
+    color: white;
+
+    &:hover {
+      background-color: transparent;
+    }
+  }
+
+  .footer__above {
+    display: grid;
+    grid-template:
+      "logo"
+      "menu";
+
+    @include mq($from: large) {
+      grid-template:
+        "logo    menu"
+        / 1fr 2fr;
+    }
+
+    .footer__logo {
+      grid-area: logo;
+      margin-bottom: $spacing-xl;
+      text-align: center;
+
+      @include mq($from: large) {
+        text-align: left;
+      }
+
+      img {
+        max-width: 300px;
+      }
+    }
+  }
+
+  .footer__below {
+    display: grid;
+    grid-template:
+      "social"
+      "disclaimers"
+      "contact";
+
+    @include mq($from: large) {
+      grid-template:
+        "disclaimers    social    contact"
+        / 6fr 1fr 1fr;
+    }
+
+    .footer__disclaimers {
+      grid-area: disclaimers;
+      margin-bottom: $spacing-xs;
+      color: white;
+      text-align: center;
+      line-height: 2;
+
+      @include mq($from: large) {
+        text-align: left;
+      }
+    }
+
+    .footer__social {
+      grid-area: social;
+      margin-bottom: $spacing-xs;
+      text-align: center;
+      line-height: 2;
+
+      a {
+        margin-right: $spacing-2-xs;
+      }
+
+      img {
+        width: 30px;
+        height: 30px;
+      }
+
+      @include mq($from: large) {
+        text-align: right;
+      }
+    }
+
+    .footer__contact {
+      grid-area: contact;
+      margin-bottom: $spacing-xs;
+      text-align: center;
+      line-height: 2;
+
+      @include mq($from: large) {
+        text-align: right;
+      }
+    }
+  }
+
+  .menu {
+    padding-left: 0;
+    list-style-type: none;
+    margin-top: 0;
+    column-count: 2;
+
+    > li {
+      margin-bottom: $spacing-m;
+
+      > a {
+        display: inline-block;
+        margin-bottom: $spacing-2-xs;
+        text-decoration: none;
+        color: $color-white;
+        font-weight: bold;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+
+      > ul > li > a {
+        display: inline-block;
+        margin-bottom: $spacing-2-xs;
+        text-decoration: none;
+        color: $color-white;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+
+    .sub-menu {
+      padding-left: 0;
+    }
+
+    @include mq($from: large) {
+      column-count: 2;
+
+      > li {
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: $spacing-m;
+
+        > a {
+          text-decoration: none;
+        }
+      }
+
+      .sub-menu {
+        display: block;
+        flex-basis: 100%;
+        list-style-type: none;
+      }
+    }
+  }
+}

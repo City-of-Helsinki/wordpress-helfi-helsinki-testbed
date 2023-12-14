@@ -1,0 +1,41 @@
+.koro {
+  $basicKoroHeight: 25px;
+  $pulseKoroHeight: 50px;
+
+  width: 100vw;
+  max-width: none !important;
+  position: relative;
+
+  &.top {
+    bottom: 1px;
+    transform: scaleY(-1) translateY(-100%);
+  }
+
+  &--basic {
+    height: $basicKoroHeight;
+
+    &.bottom {
+      top: -#{$basicKoroHeight - 1px};
+    }
+
+    @each $color-name, $color-value in $color-palette {
+      &.#{$color-name} {
+        background-image: svg-load('./images/koro-basic.svg', fill=$color-value);
+      }
+    }
+  }
+
+  &--pulse {
+    height: $pulseKoroHeight;
+
+    &.bottom {
+      top: -#{$pulseKoroHeight + 1px};
+    }
+
+    @each $color-name, $color-value in $color-palette {
+      &.#{$color-name} {
+        background-image: svg-load('./images/koro-pulse.svg', fill=$color-value);
+      }
+    }
+  }
+}

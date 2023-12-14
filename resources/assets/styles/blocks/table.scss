@@ -1,0 +1,43 @@
+.wp-block-table {
+  text-align: left;
+
+  $colors: (
+    'subtle-light-gray': #f3f4f5,
+    'subtle-pale-green': #e9fbe5,
+    'subtle-pale-blue': #e7f5fe,
+    'subtle-pale-pink': #fcf0ef,
+  );
+
+  td,
+  th {
+    border: 0;
+    padding: 10px;
+  }
+
+  @each $name, $color in $colors {
+    > .has-#{$name}-background-color {
+      background-color: $color;
+    }
+  }
+
+  &.is-style-stripes {
+    td,
+    th {
+      border-color: transparent;
+    }
+
+    tbody tr:nth-child(odd) {
+      background-color: $color-black-10;
+    }
+
+    > .has-background {
+      background-color: transparent;
+    }
+
+    @each $name, $color in $colors {
+      > .has-#{$name}-background-color tbody tr:nth-child(odd) {
+        background-color: $color;
+      }
+    }
+  }
+}

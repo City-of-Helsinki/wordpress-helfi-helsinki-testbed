@@ -1,0 +1,40 @@
+.entry-content,
+.is-root-container,
+.wp-block-group__inner-container,
+.wp-block-cover__inner-container,
+.wp-block-media-text__content,
+.wp-block-column {
+  > [class^="wp-block"] {
+    margin-top: $spacing-2-xl;
+    margin-bottom: $spacing-2-xl;
+
+    &.alignfull.has-background + .alignfull.has-background {
+      margin-top: #{-1 * $spacing-2-xl};
+    }
+
+    @include breakpoint-value($block-margins) {
+      $margin: $-bp-value;
+
+      margin-top: $margin;
+      margin-bottom: $margin;
+
+      &:first-child {
+        margin-top: 0;
+      }
+
+      &.alignfull.has-background + .alignfull.has-background {
+        margin-top: #{-1 * $margin};
+      }
+    }
+  }
+}
+
+.is-root-container,
+.wp-block-group__inner-container,
+.wp-block-cover__inner-container,
+.wp-block-media-text__content,
+.wp-block-column {
+  > [class^="wp-block"]:last-child {
+    margin-bottom: 0;
+  }
+}

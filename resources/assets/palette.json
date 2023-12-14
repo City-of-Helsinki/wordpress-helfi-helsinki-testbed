@@ -1,0 +1,92 @@
+[
+  {
+    "name": "Coat of Arms Blue",
+    "slug": "primary",
+    "color": "#0072c6"
+  },
+  {
+    "name": "Coat of Arms Blue",
+    "slug": "c-vakuuna-vakuuna",
+    "color": "#0072c6"
+  },
+  {
+    "name": "Secondary",
+    "slug": "secondary",
+    "color": "#767676"
+  },
+  {
+    "name": "Summer",
+    "slug": "c-kes-kes",
+    "color": "#ffc61e"
+  },
+  {
+    "name": "Summer Light 20",
+    "slug": "c-kes-kes-light-20",
+    "color": "#fff3d2"
+  },
+  {
+    "name": "Copper",
+    "slug": "c-kupari-kupari",
+    "color": "#00d7a7"
+  },
+  {
+    "name": "Copper Light 20",
+    "slug": "c-kupari-kupari-light-20",
+    "color": "#ccf7ed"
+  },
+  {
+    "name": "Fog Light 20",
+    "slug": "c-sumu-sumu-light-20",
+    "color": "#ebf4fb"
+  },
+  {
+    "name": "Suomenlinna",
+    "slug": "c-suomenlinna-suomenlinna",
+    "color": "#f5a3c7"
+  },
+  {
+    "name": "Suomenlinna Light 20",
+    "slug": "c-suomenlinna-suomenlinna-light-20",
+    "color": "#fdecf3"
+  },
+  {
+    "name": "Engel Light 20",
+    "slug": "c-engel-engel-light-20",
+    "color": "#fffae3"
+  },
+  {
+    "name": "Light Grey",
+    "slug": "light-grey",
+    "color": "#f6f6f6"
+  },
+  {
+    "name": "White",
+    "slug": "white",
+    "color": "#ffffff"
+  },
+  {
+    "name": "Black 20",
+    "slug": "c-black-20",
+    "color": "#cccccc"
+  },
+  {
+    "name": "Black 90",
+    "slug": "dark-grey",
+    "color": "#1a1a1a"
+  },
+  {
+    "name": "Black",
+    "slug": "black",
+    "color": "#000000"
+  },
+  {
+    "name": "Fog",
+    "slug": "c-fog",
+    "color": "#9fc9eb"
+  },
+  {
+    "name": "Gold",
+    "slug": "c-coat-of-arms-gold",
+    "color": "#c2a251"
+  }
+]

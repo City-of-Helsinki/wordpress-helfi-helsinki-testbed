@@ -1,0 +1,51 @@
+.site-search {
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  &__button {
+    position: absolute;
+    margin-top: 2px;
+    right: $spacing-s;
+
+    @include ie11 {
+      // align-items center not working
+      transform: translateY(-50%);
+    }
+  }
+
+  &__field {
+    &::-webkit-search-decoration,
+    &::-webkit-search-cancel-button,
+    &::-webkit-search-results-button,
+    &::-webkit-search-results-decoration {
+      -webkit-appearance: none;
+    }
+  }
+
+  @include mq($from: large) {
+    &__field {
+      transition: all 200ms ease-out;
+      margin-right: 3px; // make space for outline
+      width: 246px;
+
+      &:not(:focus) {
+        padding-left: 0;
+        padding-right: 0;
+        border: 0;
+        width: 100px;
+      }
+
+      &:focus ~ .site-search__button {
+        left: calc(100% - #{$spacing-l});
+        margin-top: 1px;
+      }
+    }
+
+    &__button {
+      transition: all 100ms ease-out;
+      right: auto;
+      left: -$spacing-l;
+    }
+  }
+}

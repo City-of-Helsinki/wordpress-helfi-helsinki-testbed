@@ -1,0 +1,95 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $font-default, Georgia, "Times", "Times New Roman", serif;
+  font-weight: bold;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+
+  // increase specificity to override inline editor styles
+  @if not $is-frontend {
+    :root & {
+      margin-top: 0;
+      margin-bottom: 0.5rem;
+    }
+  }
+}
+
+h1 {
+  font-size: 40px;
+  line-height: 1.25;
+
+  @include mq($from: medium) {
+    font-size: 52px;
+    line-height: 1.19;
+  }
+}
+
+h2 {
+  font-size: 36px;
+  line-height: 1.19;
+}
+
+h3 {
+  font-size: 24px;
+  line-height: 1.21;
+}
+
+h4 {
+  font-size: 20px;
+  line-height: 1.2;
+}
+
+h5 {
+  font-size: 18px;
+  line-height: 1.2;
+}
+
+blockquote {
+  font-size: 22px;
+  line-height: 1.55;
+  font-style: italic;
+}
+
+p {
+  margin-block-start: 0;
+  margin-block-end: $spacing-m;
+  font-size: $fontsize-body-medium;
+
+  &.description {
+    // Does not correspond to any HDS size.
+    font-size: 22px;
+    font-weight: bold;
+    color: $color-black-90;
+    margin-block-end: $spacing-s;
+
+    .post.type-post {
+      margin-block-end: $spacing-2-xl;
+    }
+
+    .post.type-page {
+      margin-block-end: $spacing-3-xl;
+    }
+
+    &--light {
+      font-weight: normal;
+      font-size: inherit;
+    }
+  }
+}
+
+a {
+  color: $color-coat-of-arms-blue;
+
+  &:hover {
+    background-color: #f2f2fc;
+  }
+
+  &:focus {
+    outline: auto 3px $color-coat-of-arms-blue;
+    outline-offset: 2px;
+  }
+}

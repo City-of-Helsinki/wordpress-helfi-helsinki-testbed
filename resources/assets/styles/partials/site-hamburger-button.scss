@@ -1,0 +1,18 @@
+.site-hamburger-button {
+  margin-bottom: 0;
+  padding: $spacing-s;
+  margin-right: ($spacing-m - $spacing-s) * -1;
+
+  > span {
+    @include burger(
+      $width: 22px,
+      $height: 3px,
+      $gutter: 5px,
+      $color: $color-black-90
+    );
+  }
+
+  &[aria-expanded="true"] > span {
+    @include burger-to-cross();
+  }
+}

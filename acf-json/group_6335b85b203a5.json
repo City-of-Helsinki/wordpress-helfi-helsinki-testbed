@@ -1,0 +1,44 @@
+{
+    "key": "group_6335b85b203a5",
+    "title": "Display settings",
+    "fields": [
+        {
+            "key": "field_6335bae20ca87",
+            "label": "",
+            "name": "quiet_post",
+            "type": "true_false",
+            "instructions": "Quiet posts will not be published to the front page and can be excluded from other content lists",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "Make this post quiet",
+            "default_value": 0,
+            "ui": 0,
+            "translations": "copy_once",
+            "ui_on_text": "",
+            "ui_off_text": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
+        ]
+    ],
+    "menu_order": 1,
+    "position": "side",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "field",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1664466616
+}

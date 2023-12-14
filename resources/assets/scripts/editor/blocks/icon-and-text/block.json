@@ -1,0 +1,24 @@
+{
+  "name": "hds/icon-and-text",
+  "category": "sage",
+  "attributes": {
+    "iconName": {
+      "type": "string"
+    },
+    "heading": {
+      "type": "string"
+    },
+    "body": {
+      "type": "string"
+    },
+    "iconColor": {
+      "type": "string"
+    },
+    "textColor": {
+      "type": "string"
+    },
+    "backgroundColor": {
+      "type": "string"
+    }
+  }
+}

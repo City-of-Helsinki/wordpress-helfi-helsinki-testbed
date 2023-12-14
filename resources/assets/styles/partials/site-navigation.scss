@@ -1,0 +1,161 @@
+// Mobile first styles of navigation
+.site-navigation {
+  display: flex;
+  padding-left: 0;
+  margin: 0 auto;
+  background-color: $color-white;
+  flex-direction: column;
+  width: 100%;
+
+  @include mq($from: large) {
+    max-width: calc(var(--container-width) * 1px);
+  }
+
+  @include ie11 {
+    max-width: $global-width;
+  }
+
+  &__item {
+    list-style: none;
+    font-weight: 500;
+    color: $color-black-90;
+  }
+
+  &__link {
+    color: inherit;
+    text-decoration: none;
+    line-height: $lineheight-l;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: $spacing-s $spacing-m;
+
+    &:hover {
+      background-color: transparent;
+    }
+
+    // Make space for trigger
+    .has-children > & {
+      padding-right: ($spacing-m + $spacing-s);
+    }
+  }
+
+  &__submenu-trigger {
+    width: $spacing-m;
+    position: absolute;
+    right: $spacing-s;
+    height: 100%;
+    padding-left: $spacing-s;
+    padding-right: $spacing-s;
+    box-sizing: content-box;
+    background-size: 24px;
+    transition: transform 85ms ease-out;
+
+    [aria-expanded="true"] & {
+      transform: rotate(180deg);
+    }
+  }
+
+  &__submenu {
+    max-height: 0;
+    overflow-y: hidden;
+    padding-left: $spacing-m;
+
+    .site-navigation__link {
+      font-weight: normal;
+      padding: 12px 14px;
+      display: block;
+      width: 100%;
+    }
+
+    [aria-expanded="true"] > & {
+      display: block;
+      max-height: none;
+    }
+  }
+}
+
+@include mq($from: large) {
+  .site-navigation {
+    flex-direction: row;
+
+    &__item {
+      position: relative;
+      // Position the angle icon if it exist, submenu is absolute anyways
+      display: flex;
+      font-weight: bold;
+
+      // Items are horizontal
+      &:not(:last-child) {
+        margin-right: $spacing-m;
+      }
+    }
+
+    &__link {
+      display: inline-block;
+      padding-left: 0;
+      padding-right: 0;
+
+      // A bottom border bar shown on hover and active state
+      &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        left: 50%;
+        right: 50%;
+        bottom: 0;
+        border-bottom: solid 5px;
+        border-bottom-color: transparent;
+        transition: all 100ms ease-out;
+      }
+
+      .is-level-1 > &:focus::after,
+      .is-level-1[aria-expanded="true"] > &::after {
+        left: 0;
+        right: 0;
+        border-bottom-color: $color-black-90;
+      }
+
+      &:focus {
+        outline: none;
+        box-shadow: 0 0 0 3px $color-focus-outline-text-input-default;
+        transform: translate3d(0, 0, 0);
+        border-radius: 2px;
+      }
+    }
+
+    &__submenu-trigger {
+      padding: 0;
+      box-sizing: border-box;
+      background-size: contain;
+      height: $spacing-m;
+      // Make it fit into the padding space of the link
+      margin-left: $spacing-2-xs;
+      right: auto;
+    }
+
+    &__submenu {
+      display: none;
+      position: absolute;
+      left: 0;
+      width: 190px;
+      top: 100%;
+      background-color: $color-white;
+      border: solid 1px $color-black-90;
+      padding-left: 0;
+      max-height: none;
+      overflow-y: visible;
+
+      .site-navigation__link {
+        &:hover,
+        &:focus {
+          background-color: $color-black-10;
+        }
+      }
+
+      [aria-expanded="true"] > & {
+        display: block;
+      }
+    }
+  }
+}

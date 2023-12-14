@@ -1,0 +1,68 @@
+.site-languages {
+  display: flex;
+  padding-left: 0;
+  margin: 0 auto;
+  max-width: $global-width;
+  background-color: $color-white;
+  position: relative;
+
+  &__button {
+    position: relative;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    line-height: $lineheight-l;
+    padding-top: $spacing-s;
+    padding-bottom: $spacing-s;
+    padding-right: ($spacing-m + $spacing-2-xs);
+    padding-left: $spacing-m;
+  }
+
+  &__menu {
+    display: none;
+    position: absolute;
+    right: 0;
+    width: 190px;
+    top: 100%;
+    background-color: $color-white;
+    border: solid 1px $color-black-90;
+    padding-left: 0;
+    z-index: 101;
+    margin: 0;
+
+    [aria-expanded="true"] + & {
+      display: block;
+    }
+  }
+
+  &__item {
+    list-style: none;
+    color: $color-black-90;
+    display: flex;
+  }
+
+  &__link {
+    color: inherit;
+    text-decoration: none;
+    line-height: $lineheight-l;
+    padding: 12px 14px;
+    display: block;
+    width: 100%;
+
+    &.is-active {
+      font-weight: bold;
+    }
+
+    &:hover,
+    &:focus {
+      background-color: $color-black-10;
+    }
+  }
+
+  &__trigger {
+    width: $spacing-m;
+    height: $spacing-m;
+    position: absolute;
+    right: 0;
+  }
+}

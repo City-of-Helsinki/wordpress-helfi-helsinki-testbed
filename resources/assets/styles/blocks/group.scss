@@ -1,0 +1,162 @@
+.wp-block-group {
+  $basicKoroHeight: 25px;
+  $pulseKoroHeight: 50px;
+
+  &.alignfull .wp-block-group__inner-container {
+    max-width: $content-width-max;
+    max-width: var(--alignwide-width);
+    margin-left: auto;
+    margin-right: auto;
+
+    // Nested alignfull should break out of inner container
+    .alignfull {
+      width: 100vw;
+      max-width: none;
+      margin-left: calc((100vw - var(--alignwide-width)) / 2 * -1);
+    }
+  }
+
+  &.alignwide,
+  &.alignfull {
+    // non-aligned content within alignwide and alignfull should have alignwide width
+    .wp-block-group__inner-container > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.has-text-align-center) {
+      max-width: $content-width-max;
+      max-width: var(--content-width);
+      margin-left: auto;
+      margin-right: auto;
+
+      // align content to the left on large screens
+      @include mq($from: large) {
+        margin-left: 0;
+      }
+    }
+  }
+
+  @if not $is-frontend {
+    @at-root {
+      [data-align="full"] .wp-block-group__inner-container {
+        max-width: $content-width-max;
+        max-width: var(--alignwide-width);
+        margin-left: auto;
+        margin-right: auto;
+
+        // Nested alignfull should break out of inner container
+        // Override core specificity issue
+        .wp-block.wp-block.wp-block[data-align="full"] {
+          width: 100vw;
+          max-width: none;
+          margin-left: calc((100vw - var(--alignwide-width)) / 2 * -1);
+        }
+      }
+
+      [data-align="full"] > .wp-block-group,
+      [data-align="wide"] > .wp-block-group {
+        .wp-block {
+          max-width: none;
+        }
+
+        // non-aligned content within alignwide and alignfull should have alignwide width
+        .wp-block-group__inner-container > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not([data-align]):not(.has-text-align-center):not(.is-reusable) {
+          max-width: $content-width-max;
+          max-width: var(--content-width);
+          margin-left: 0;
+          margin-right: auto;
+        }
+      }
+    }
+  }
+
+  // Blocks with backgrounds have a padding.
+  &.has-background {
+    padding: $spacing-2-xl $spacing-s;
+
+    @include breakpoint-value($block-paddings) {
+      $padding: $-bp-value;
+
+      padding: $padding $padding;
+
+      // Let alignfull stretch to the edge.
+      [data-align="full"],
+      .alignfull {
+        margin-left: -$padding;
+        margin-right: -$padding;
+        max-width: calc(100% + #{$padding * 2});
+
+        @if not $is-frontend {
+          width: 100vw;
+        }
+      }
+    }
+  }
+
+  &[class*='is-style-koro-'] {
+    position: relative;
+
+    // Make more space so that spacing between blocks is preserved despite the
+    // effect.
+
+    &.is-style-koro-top-basic {
+      margin-top: calc(#{$spacing-2-xl} + #{$basicKoroHeight});
+    }
+
+    &.is-style-koro-top-pulse {
+      margin-top: calc(#{$spacing-2-xl} + #{$pulseKoroHeight});
+    }
+
+    .alignfull.has-background + & {
+      margin-top: 0;
+    }
+
+    @include breakpoint-value($block-margins) {
+      $margin: $-bp-value;
+
+      &.is-style-koro-top-basic {
+        margin-top: calc(#{$margin} + #{$basicKoroHeight});
+      }
+
+      &.is-style-koro-top-pulse {
+        margin-top: calc(#{$margin} + #{$pulseKoroHeight});
+      }
+    }
+
+    &::before {
+      content: "";
+      z-index: 10;
+      position: absolute;
+      left: 0;
+      right: 0;
+      width: 100%;
+      background-repeat: repeat-x;
+      pointer-events: none;
+    }
+  }
+
+  &[class*='is-style-koro-top-'] {
+    &::before {
+      top: 1px;
+      transform: translateY(-100%);
+    }
+  }
+
+  &.is-style-koro-top-basic {
+    &::before {
+      height: $basicKoroHeight;
+    }
+    @each $color-name, $color-value in $color-palette {
+      &.has-#{$color-name}-background-color::before {
+        background-image: svg-load('./images/koro-basic.svg', fill=$color-value);
+      }
+    }
+  }
+
+  &.is-style-koro-top-pulse {
+    &::before {
+      height: 50px;
+    }
+    @each $color-name, $color-value in $color-palette {
+      &.has-#{$color-name}-background-color::before {
+        background-image: svg-load('./images/koro-pulse.svg', fill=$color-value);
+      }
+    }
+  }
+}

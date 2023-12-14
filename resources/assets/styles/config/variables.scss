@@ -1,0 +1,62 @@
+// // 1. Global
+// // ---------
+
+$is-frontend: true;
+
+$block-paddings: (
+  small: $spacing-2-xl,
+  medium: $spacing-5-xl
+);
+
+$block-margins: (
+  small: $spacing-2-xl,
+  medium: $spacing-5-xl
+);
+
+// @todo we need to fix the grid
+$container-margins: (
+  small: 20px,
+  medium: 30px
+);
+
+$color-palette: (
+  'primary': $color-coat-of-arms-blue,
+  'secondary': #767676,
+  'black': $color-black,
+  'white': $color-white,
+  'c-kes-kes-light-20':	$color-summer-light-20,
+  'c-kupari-kupari-light-20': $color-copper-light-20,
+  'c-sumu-sumu-light-20': $color-fog-light-20,
+  'c-suomenlinna-suomenlinna-light-20': $color-suomenlinna-light-20,
+  'c-engel-engel-light-20': $color-engel-light-20,
+  'light-grey': #f6f6f8, // @todo
+  'dark-grey': $color-black-90,
+  'c-suomenlinna-suomenlinna': $color-suomenlinna,
+  'c-vaakuna-vaakuna': $color-coat-of-arms-blue,
+  'c-kupari-kupari': 	$color-copper,
+  'c-kes-kes': $color-summer,
+  'c-black-20': $color-black-20,
+  'c-fog': $color-fog,
+  'c-coat-of-arms-gold': $color-coat-of-arms-gold,
+);
+
+$font-sizes: (
+  small: $fontsize-body-small,
+  medium: $fontsize-body-medium,
+  large: $fontsize-body-large,
+);
+
+$primary-color: map-get($color-palette, 'primary');
+$global-font-size: 100%;
+$global-width: 1200px;
+$content-width-max: 674px;
+
+$mq-breakpoints: (
+  xsmall: $breakpoint-xs,
+  small: $breakpoint-s,
+  medium: $breakpoint-m,
+  large: $breakpoint-l,
+  xlarge: $breakpoint-xl,
+);
+
+$footer-koro-height: 25px;
