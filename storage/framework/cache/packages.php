@@ -1,11 +1,4 @@
 <?php return array (
-    'generoi/sage-nativeblock' =>
-  array (
-    'providers' =>
-    array (
-      0 => 'Genero\\Sage\\NativeBlock\\NativeBlockServiceProvider',
-    ),
-  ),
   'log1x/acf-composer' =>
   array (
     'providers' =>
