@@ -1,5 +1,5 @@
 <?php return array (
-  'providers' => 
+  'providers' =>
   array (
     0 => 'Illuminate\\Bus\\BusServiceProvider',
     1 => 'Illuminate\\Cache\\CacheServiceProvider',
@@ -12,14 +12,14 @@
     8 => 'Roots\\Acorn\\Providers\\AcornServiceProvider',
     9 => 'Roots\\Acorn\\Providers\\RouteServiceProvider',
     10 => 'Roots\\Acorn\\View\\ViewServiceProvider',
-    11 => 'Genero\\Sage\\NativeBlock\\NativeBlockServiceProvider',
-    12 => 'Log1x\\AcfComposer\\Providers\\AcfComposerServiceProvider',
-    13 => 'Log1x\\Navi\\Providers\\NaviServiceProvider',
-    14 => 'Log1x\\SageSvg\\SageSvgServiceProvider',
-    15 => 'Carbon\\Laravel\\ServiceProvider',
-    16 => 'App\\Providers\\ThemeServiceProvider',
+    11 => 'Log1x\\AcfComposer\\Providers\\AcfComposerServiceProvider',
+    12 => 'Log1x\\Navi\\Providers\\NaviServiceProvider',
+    13 => 'Log1x\\SageSvg\\SageSvgServiceProvider',
+    14 => 'Carbon\\Laravel\\ServiceProvider',
+    15 => 'App\\Providers\\ThemeServiceProvider',
+    16 => 'App\\Providers\\NativeBlockServiceProvider',
   ),
-  'eager' => 
+  'eager' =>
   array (
     0 => 'Illuminate\\Database\\DatabaseServiceProvider',
     1 => 'Illuminate\\Routing\\RoutingServiceProvider',
@@ -29,14 +29,14 @@
     5 => 'Roots\\Acorn\\Providers\\AcornServiceProvider',
     6 => 'Roots\\Acorn\\Providers\\RouteServiceProvider',
     7 => 'Roots\\Acorn\\View\\ViewServiceProvider',
-    8 => 'Genero\\Sage\\NativeBlock\\NativeBlockServiceProvider',
-    9 => 'Log1x\\AcfComposer\\Providers\\AcfComposerServiceProvider',
-    10 => 'Log1x\\Navi\\Providers\\NaviServiceProvider',
-    11 => 'Log1x\\SageSvg\\SageSvgServiceProvider',
-    12 => 'Carbon\\Laravel\\ServiceProvider',
-    13 => 'App\\Providers\\ThemeServiceProvider',
+    8 => 'Log1x\\AcfComposer\\Providers\\AcfComposerServiceProvider',
+    9 => 'Log1x\\Navi\\Providers\\NaviServiceProvider',
+    10 => 'Log1x\\SageSvg\\SageSvgServiceProvider',
+    11 => 'Carbon\\Laravel\\ServiceProvider',
+    12 => 'App\\Providers\\ThemeServiceProvider',
+    13 => 'App\\Providers\\NativeBlockServiceProvider',
   ),
-  'deferred' => 
+  'deferred' =>
   array (
     'Illuminate\\Bus\\Dispatcher' => 'Illuminate\\Bus\\BusServiceProvider',
     'Illuminate\\Contracts\\Bus\\Dispatcher' => 'Illuminate\\Bus\\BusServiceProvider',
@@ -50,15 +50,15 @@
     'Illuminate\\Cache\\RateLimiter' => 'Illuminate\\Cache\\CacheServiceProvider',
     'Illuminate\\Contracts\\Pipeline\\Hub' => 'Illuminate\\Pipeline\\PipelineServiceProvider',
   ),
-  'when' => 
+  'when' =>
   array (
-    'Illuminate\\Bus\\BusServiceProvider' => 
+    'Illuminate\\Bus\\BusServiceProvider' =>
     array (
     ),
-    'Illuminate\\Cache\\CacheServiceProvider' => 
+    'Illuminate\\Cache\\CacheServiceProvider' =>
     array (
     ),
-    'Illuminate\\Pipeline\\PipelineServiceProvider' => 
+    'Illuminate\\Pipeline\\PipelineServiceProvider' =>
     array (
     ),
   ),
