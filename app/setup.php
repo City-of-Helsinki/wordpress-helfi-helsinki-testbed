@@ -9,6 +9,10 @@ namespace App;
 use function Roots\asset;
 use function Roots\base_path;
 
+add_filter('acorn/paths.storage', function ($path) {
+    return trailingslashit(ABSPATH).'.cache/sage/';
+  });
+
 /**
  * Register the theme assets.
  *
@@ -52,7 +56,11 @@ add_action('wp_enqueue_scripts', function () {
  * @return void
  */
 add_action('enqueue_block_editor_assets', function () {
-    if ($manifest = asset('scripts/manifest.asset.php')->get()) {
+    $dir = get_template_directory();
+
+    if (file_exists($dir . '/dist/scripts/manifest.asset.php')) {
+        $manifest = include $dir . '/dist/scripts/manifest.asset.php';
+
         wp_enqueue_script('sage/vendor.js', asset('scripts/vendor.js')->uri(), $manifest['dependencies'], null, true);
         wp_enqueue_script('sage/editor.js', asset('scripts/editor.js')->uri(), ['sage/vendor.js'], null, true);
 
