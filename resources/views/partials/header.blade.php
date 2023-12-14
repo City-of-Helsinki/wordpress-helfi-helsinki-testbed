@@ -7,6 +7,19 @@
     @endif
   </a>
 
+  <?php
+
+    // View composer Navigation with() variables not working
+    if (empty($language_code)) {
+      $language_code = \App\current_locale_code();
+    }
+
+    if ( empty( $language_navigation ) ) {
+      $language_navigation = \App\languages_list();
+    }
+
+  ?>
+
   <div class="site-header__name">
     <h5>{{ $site_name }}</h5>
   </div>
