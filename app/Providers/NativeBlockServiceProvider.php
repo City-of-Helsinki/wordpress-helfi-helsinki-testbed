@@ -29,7 +29,7 @@ class NativeBlockServiceProvider extends ServiceProvider
             );
 
             if (
-                is_subclass_of($composer, NativeBlock::class) &&
+                is_subclass_of($composer, \App\Blocks\NativeBlock::class) &&
                 ! (new ReflectionClass($composer))->isAbstract()
             ) {
                 (new $composer($this->app))->compose();
