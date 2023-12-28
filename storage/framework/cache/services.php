@@ -17,6 +17,7 @@
     13 => 'Log1x\\SageSvg\\SageSvgServiceProvider',
     14 => 'Carbon\\Laravel\\ServiceProvider',
     15 => 'App\\Providers\\ThemeServiceProvider',
+    16 => 'App\\Providers\\NativeBlockServiceProvider',
   ),
   'eager' => 
   array (
@@ -33,6 +34,7 @@
     10 => 'Log1x\\SageSvg\\SageSvgServiceProvider',
     11 => 'Carbon\\Laravel\\ServiceProvider',
     12 => 'App\\Providers\\ThemeServiceProvider',
+    13 => 'App\\Providers\\NativeBlockServiceProvider',
   ),
   'deferred' => 
   array (
