@@ -31,6 +31,7 @@ add_action('wp_enqueue_scripts', function () {
 
     wp_enqueue_style('sage/app.css', asset('styles/app.css')->uri(), ['wp-block-library'], null);
     wp_enqueue_style('sage/vue.css', asset('styles/vue.css')->uri(), ['sage/app.css'], null);
+    wp_enqueue_style('sage/styles.css', asset('styles/styles.css')->uri(), ['sage/app.css'], null);
 
     wp_localize_script('sage/app.js', 'Sage', [
         'locale' => get_locale(),

@@ -1,0 +1,9 @@
+.wp-block-media-text__content {
+  z-index: 1;
+}
+
+.blocks-gallery-grid:not(.has-nested-images),
+.wp-block-gallery:not(.has-nested-images) {
+  margin-right: auto;
+  margin-left: auto;
+}
