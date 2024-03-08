@@ -7,3 +7,11 @@
   margin-left: auto;
   margin-right: auto;
 }
+
+.wp-block-button.is-style-outline .hds-button {
+  background-color: transparent;
+}
+
+.wp-block-button.is-style-outline .hds-button:hover {
+  background-color: #f2f2fc;
+}
