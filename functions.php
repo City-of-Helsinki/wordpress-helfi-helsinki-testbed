@@ -54,7 +54,7 @@ if (! function_exists('\Roots\bootloader')) {
 |
 */
 
-collect(['helpers', 'setup', 'filters', 'admin', 'yoast'])
+collect(['helpers', 'setup', 'filters', 'admin', 'yoast', 'hds-wp'])
     ->each(function ($file) {
         if (! locate_template($file = "app/{$file}.php", true, true)) {
             wp_die(
