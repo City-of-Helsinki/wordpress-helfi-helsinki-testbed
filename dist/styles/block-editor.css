@@ -1,0 +1,14 @@
+body.wp-admin .editor-styles-wrapper .wp-block-media-text__content {
+  z-index: 1;
+}
+
+body.wp-admin .editor-styles-wrapper .wp-block-button.is-style-outline .wp-block-button__link {
+  background-color: transparent;
+}
+
+body.wp-admin .editor-styles-wrapper [data-align="full"] > .wp-block-group .wp-block-group__inner-container > .wp-block-buttons.is-content-justification-center:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not([data-align]):not(.has-text-align-center):not(.is-reusable),
+body.wp-admin .editor-styles-wrapper [data-align="wide"] > .wp-block-group .wp-block-group__inner-container > .wp-block-buttons.is-content-justification-center:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not([data-align]):not(.has-text-align-center):not(.is-reusable) {
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+}
