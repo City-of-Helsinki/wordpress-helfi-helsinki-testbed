@@ -69,6 +69,7 @@ add_action('enqueue_block_editor_assets', function () {
     }
 
     wp_enqueue_style('sage/editor.css', asset('styles/editor.css')->uri(), false, null);
+    wp_enqueue_style('sage/block-editor.css', asset('styles/block-editor.css')->uri(), false, null);
 }, 100);
 
 /**
